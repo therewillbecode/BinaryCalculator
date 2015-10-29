@@ -1,15 +1,15 @@
-module.exports.conv = conv;
+module.exports.conv = to_decimal;
 module.exports.calculate = calculate;
 
 
 function calculate(a, b){
 
-return conv(a) + conv(b)
+return to_decimal(a) + to_decimal(b)
 
 }
 
 
-function conv(x){
+function to_decimal(x){
     var cur = Math.pow(2, (x.length));
 
     return Array.prototype.map.call(x, function(val, index){
@@ -37,4 +37,4 @@ function conv(x){
     .reduce(function(a,b){return a + b})
 }
 
-console.log(conv("100"));
+console.log(to_decimal("100"));
